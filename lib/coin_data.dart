@@ -39,7 +39,7 @@ class CoinData {
 
     for (String crypto in cryptoList) {
       String requestUrl =
-          '$coinApiUrl/$crypto/$selectedCurrency?apikey=$apiKey';
+          '$coinApiUrl/$crypto/$selectedCurrency?apikey=$apiKey'; // $apiKey change to your API
       http.Response response = await http.get(Uri.parse(requestUrl));
       if (response.statusCode == 200) {
         var decodedData = jsonDecode(response.body);
